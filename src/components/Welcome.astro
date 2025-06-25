@@ -1,0 +1,28 @@
+---
+import Navbar from "./Navbar.astro";
+
+interface Props {
+  title: string;
+  body: string;
+  href: string;
+}
+
+const { title, body, href } = Astro.props;
+---
+
+<div id="container">
+  <header>
+    <Navbar />
+    <main>
+      <a href={href}></a>
+      <h2>
+        {title}
+      </h2>
+
+      <p>
+        {body}
+      </p>
+    </main>
+  </header>
+  <style></style>
+</div>

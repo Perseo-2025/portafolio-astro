@@ -1,0 +1,40 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+interface Props {
+  title: string;
+  body: string;
+  href: string;
+}
+
+const { title, body, href } = Astro.props;
+---
+
+<Layout title="Rey Perseo Cardenas / System Engineer | Full Stack Developer">
+  <section id="container" class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]">
+    <header>
+      <Navbar />
+      <main>
+        <a href={href}></a>
+        <h2>
+          {title}
+        </h2>
+        <p>
+          {body}
+        </p>
+      </main>
+    </header>
+
+	<main>
+
+	</main>
+
+
+
+  </section>
+</Layout>
