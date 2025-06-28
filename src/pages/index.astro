@@ -1,40 +1,235 @@
 ---
+import JobTimeline from "../components/JobTimeline.astro";
 import Navbar from "../components/Navbar.astro";
-import Welcome from "../components/Welcome.astro";
+import Project from "../components/Project.astro";
 import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 
-interface Props {
-  title: string;
-  body: string;
-  href: string;
-}
-
-const { title, body, href } = Astro.props;
+const PROJECTS: Porject[] = [
+  {
+    title: "POS - Point Of Sale",
+    urlImg: "/1.png",
+    description: "",
+    link: "",
+    usedSkill: [
+      {
+        name: "Nextjs",
+        iconUrl: "/icons/nextdotjs.svg",
+      },
+      {
+        name: "Nestjs",
+        iconUrl: "/icons/nestjs.svg",
+      },
+      {
+        name: "PostgresSQL",
+        iconUrl: "/icons/postgresql.svg",
+      },
+    ],
+  },
+  {
+    title: "Manage Master",
+    urlImg: "/1.png",
+    description: "",
+    link: "",
+    usedSkill: [
+      {
+        name: "Reactjs",
+        iconUrl: "/icons/react.svg",
+      },
+      {
+        name: "React Query",
+        iconUrl: "/icons/reactquery.svg",
+      },
+      {
+        name: "React Router",
+        iconUrl: "/icons/reactrouter.svg",
+      },
+      {
+        name: "Expressjs",
+        iconUrl: "/icons/express.svg",
+      },
+      {
+        name: "TypeScript",
+        iconUrl: "/icons/typescript.svg",
+      },
+      {
+        name: "JWT",
+        iconUrl: "/icons/jsonwebtokens.svg",
+      },
+    ],
+  },
+  {
+    title: "FreshCoffe",
+    urlImg: "/1.png",
+    description: "",
+    link: "",
+    usedSkill: [
+      {
+        name: "React",
+        iconUrl: "/icons/react.svg",
+      },
+      {
+        name: "React Router",
+        iconUrl: "/icons/reactrouter.svg",
+      },
+      {
+        name: "Javasript",
+        iconUrl: "/icons/javascript.svg",
+      },
+      {
+        name: "Laravel",
+        iconUrl: "/icons/laravel.svg",
+      },
+    ],
+  },
+  {
+    title: "Devjobs",
+    urlImg: "/1.png",
+    description: "",
+    link: "",
+    usedSkill: [
+      {
+        name: "Laravel",
+        iconUrl: "/icons/laravel.svg",
+      },
+      {
+        name: "Livewire",
+        iconUrl: "/icons/livewire.svg",
+      },
+      {
+        name: "Javasript",
+        iconUrl: "/icons/javascript.svg",
+      },
+    ],
+  },
+  {
+    title: "JournalApp",
+    urlImg: "/1.png",
+    description: "",
+    link: "",
+    usedSkill: [
+      {
+        name: "React",
+        iconUrl: "/icons/react.svg",
+      },
+      {
+        name: "React Router",
+        iconUrl: "/icons/reactrouter.svg",
+      },
+      {
+        name: "JavaScript",
+        iconUrl: "/icons/javascript.svg",
+      },
+      {
+        name: "Firebase",
+        iconUrl: "/icons/firebase.svg",
+      }
+    ],
+  },
+  {
+    title: "Inmobilisite",
+    urlImg: "/1.png",
+    description: "",
+    link: "",
+    usedSkill: [
+      {
+        name: "Nodejs",
+        iconUrl: "/icons/nodedotjs.svg",
+      },
+      {
+        name: "Express",
+        iconUrl: "/icons/express.svg",
+      },
+      {
+        name: "JavaScript",
+        iconUrl: "/icons/javascript.svg",
+      },
+      {
+        name: "Pug",
+        iconUrl: "/icons/pug.svg",
+      },
+    ],
+  },
+  
+];
 ---
 
-<Layout title="Rey Perseo Cardenas / System Engineer | Full Stack Developer">
-  <section id="container" class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]">
+<Layout title="Rey Perseo Cardenas | System Engineer | Full Stack Developer">
+  <section
+    id="container"
+    class="text-white absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]"
+  >
     <header>
       <Navbar />
-      <main>
-        <a href={href}></a>
-        <h2>
-          {title}
-        </h2>
-        <p>
-          {body}
-        </p>
-      </main>
     </header>
 
-	<main>
+    <section id="presentation">
+      <section
+        class="md:h-[600px] flex flex-col items-center justify-center text-white px-4"
+      >
+        <!-- Bloque de bienvenida centrado -->
+        <div
+          class="flex flex-col items-center text-center justify-center md:h-[500px] h-[400px]"
+        >
+          <img
+            src="/foto.jpeg"
+            alt="Logo"
+            width="200"
+            height="200"
+            class="mx-auto rounded-full"
+            loading={"lazy"}
+          />
+          <h2 class="text-xl md:text-2xl lg:text-3xl mt-3">
+            Bienvenido a mi portafolio
+          </h2>
+          <h3 class="text-2xl md:text-3xl lg:text-4xl">
+            Hola, soy <span class="text-red-400 font-bold">Rey Perseo</span> | Full
+            Stack Developer jr. & System Engineer
+          </h3>
+        </div>
 
-	</main>
+        <!-- Descripción alineada a la izquierda pero centrada como bloque -->
+        <div id="description" class="w-full flex justify-center">
+          <p class="w-full md:w-2/5 text-start">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            earum eum laboriosam deleniti aliquid dolor nisi facilis consectetur
+            exercitationem? Voluptatum ex aliquid quibusdam impedit doloremque
+            provident beatae sit, est minus! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Quis tenetur labore, ullam id ab,
+            dolorum incidunt tempora recusandae praesentium laborum culpa
+            eligendi! Quas quod, ea fugiat perspiciatis corporis iusto
+            recusandae! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Laborum laboriosam quam saepe ducimus possimus omnis ab? Inventore
+            omnis quam nesciunt quo est, tempora ex voluptas, harum
+            necessitatibus praesentium tempore eius?
+          </p>
+        </div>
+      </section>
+    </section>
 
+    <main class="px-4 md:px-8 py-12">
+      <!-- Sección de proyectos -->
+      <h3 class="text-2xl font-bold text-center text-white mb-10">
+        Mis Proyectos
+      </h3>
+      <section
+        id="project"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-xl mx-auto px-4"
+      >
+        {
+          PROJECTS.map((project, index) => (
+            <Project project={project} index={index} />
+          ))
+        }
+      </section>
 
-
+      <!-- Sección de experiencia -->
+      <h3 class="text-2xl font-bold text-center text-white mb-10">
+        Experiencia
+      </h3>
+      <section>
+        <JobTimeline />
+      </section>
+    </main>
   </section>
 </Layout>

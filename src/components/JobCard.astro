@@ -1,0 +1,44 @@
+---
+interface Props {
+  job: {
+    date: string;
+    title: string;
+    description: string;
+    index: number;
+  };
+}
+
+const { date, title, description, index } = Astro.props.job;
+const isEven = index % 2 === 0;
+---
+
+<li class="w-full flex justify-center items-start mb-12 relative">
+  <!-- Bloque izquierdo -->
+  {isEven && (
+    <div class="w-[40%] text-right hidden md:block pr-6">
+      <time class="block text-sm text-gray-400">{date}</time>
+      <h3 class="text-lg font-semibold text-white">{title}</h3>
+      <p class="text-gray-400 text-sm">{description}</p>
+      
+    </div>
+  )}
+
+  <!-- Línea vertical -->
+  <div class="w-[2px] h-full bg-gray-600"></div>
+
+  <!-- Bloque derecho -->
+  {!isEven && (
+    <div class="w-[40%] hidden md:block pl-6">
+      <time class="block text-sm text-gray-400">{date}</time>
+      <h3 class="text-lg font-semibold text-white">{title}</h3>
+      <p class="text-gray-400 text-sm">{description}</p>
+    </div>
+  )}
+
+  <!-- Móvil: bloque completo abajo -->
+  <div class="md:hidden w-full text-left mt-4 px-2">
+    <time class="block text-sm text-gray-400">{date}</time>
+    <h3 class="text-lg font-semibold text-white">{title}</h3>
+    <p class="text-gray-400 text-sm">{description}</p>
+  </div>
+</li>

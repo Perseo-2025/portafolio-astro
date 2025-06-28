@@ -1,0 +1,27 @@
+---
+import JobCard from "./JobCard.astro";
+
+const JOBS = [
+  {
+    date: "Ene 2025 - Julio 2025",
+    title: "Practicante Backend developer jr.",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.",
+  },
+  {
+    date: "Nov 2024 - Dic 2024",
+    title: "Practicante de Desarrollo web",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.",
+  },
+  {
+    date: "Agos 2024 - Oct 2024",
+    title: "Practicante React Junior",
+    description: "lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, officia.",
+  },
+];
+---
+
+<ol class="relative flex flex-col items-center w-full mx-auto">
+  {
+    JOBS.map((job, index) => <JobCard job={{ ...job, index }} />)
+  }
+</ol>

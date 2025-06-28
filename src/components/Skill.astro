@@ -1,0 +1,15 @@
+---
+// Skill.astro
+interface Props {
+  skill: {
+    name: string;
+    iconUrl: string;
+  };
+}
+const { skill } = Astro.props;
+---
+
+<div class="flex items-center bg-gray-700 px-2 py-1 rounded text-sm text-white">
+  <img src={skill.iconUrl} alt={skill.name} class="w-4 h-4 mr-2" />
+  {skill.name}
+</div>
